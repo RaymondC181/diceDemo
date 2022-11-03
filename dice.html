@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+<title></title>
+<style></style>
+<script>
+    function initialize()
+    {
+        rollBtn = document.getElementById("randNum"); 
+        rollBtn2 = document.getElementById("randNum2"); //<-  
+        totalNumbers = document.getElementById("totalNum");
+        randNum = 0; 
+        randNum2 = 0;   
+    }
+    function display()
+    {
+        rollBtn.innerHTML = randNum; 
+        rollBtn2.innerHTML = randNum2;  
+        totalNumbers.innerHTML = randNum+randNum2;
+
+    }
+    function roll()
+    {
+        randNum = (Math.random()*6)+1; 
+        randNum = parseInt(randNum); 
+        randNum2 = (Math.random()*6)+1;  
+        randNum2 = parseInt(randNum2);   
+        display(); 
+    }
+</script>
+</head>
+<body onload = "initialize();">
+    <p>Die 1</p>
+    <p id = "randNum">0</p>
+    <hr />
+    <p>Die 2</p>
+    <p id = "randNum2">0</p>
+    <hr />
+    <p>Total Num: </p>
+    <p id = "totalNum">0</p>
+    <hr />
+    <button onclick = "roll();">Roll</button>
+</body>
+</html>
+
+<!--
+    Raymond Chen 
+    Period 7 & 8
+    Even Days
+    Desc: 
+    3 variable that changes when roll button is pressed. 
+    randNum and randNum rolls from 1 to 6 for both. 
+    totalNumbers is the sum of randNum and randNum2. 
+    initialize() create the variables 
+    display() changes the innerhtml 
+    roll() is what that generates the random number 
+-->
